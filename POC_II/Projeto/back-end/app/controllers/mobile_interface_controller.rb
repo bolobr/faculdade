@@ -1,0 +1,2 @@
+class MobileInterfaceController < ApplicationController
+end
