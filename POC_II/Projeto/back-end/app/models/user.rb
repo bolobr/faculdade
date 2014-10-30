@@ -4,6 +4,7 @@ class User
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  attr_accessor :login
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -33,4 +34,14 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
+  field :username, type: String
+
+  def self.from_params(user_data)
+    user = any_of({email: user_data[:login]}, {username: user_data[:login]}).first
+    if user && user.valid_password?(user_data[:password])
+      return user
+    end
+    return nil
+  end
+
 end

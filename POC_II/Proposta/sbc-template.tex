@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+
+%\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+
+
+\sloppy
+
+\title{Proposta POC II \\ Detecção de contexto. Exemplo aplicado à supermercados}
+
+\author{Aluno: Guilherme Cordeiro \\ Orientador: José Marcos Nogueira}
+
+
+\address{Universidade Federal De Minas Gerais}
+
+\begin{document}
+
+\maketitle
+
+
+
+\section{Introdução}
+
+Recentemente, aplicações de detecção de contexto vem ganhando muito espaço. Estes tipos de aplicações utilizam dados coletados de vários serviços diferentes para melhorar a resposta para um usuário. Dados como a geolocalização, clima, ou até mesmo a rede de amigos de um usuário podem ser utilizados para tornar a aplicação mais útil.
+
+Vários aplicativos já utilizam este conceito, em especial podemos citar dois: o Waze é um GPS que é capaz detectar se uma via está congestionada e oferecer uma rota menos complicada. O outro é o google now, que agrega inúmeras informações sobre o padrão de vida do usuário e faz vários tipos de sugestões sobre vários aspectos.
+
+Para este trabalho, a ideia é explorar tal conceito em um ambiente de supermercado. Neste tipo de lugar, as interações do usuário com o ambiente são inúmeras e permitem um amplo leque de funcionalidades a serem desenvolvidas.
+
+
+
+\section{ Referencial Teórico }
+
+Para este trabalho, é necessário entender a ideia de contexto e quais tecnologias e ferramentas podem contribuir para que um aplicativo seja capaz de obter os dados necessários para melhorar sua resposta.
+
+Para realizar esta tarefa, temos dados mais simples e fáceis de obter. Estas informações não dependem de grande quantidades de dados e podem ser obtidos de maneiras simples dos mais diversos serviços.
+
+\begin{itemize}
+    \item Redes Sociais
+    \item Geolocalização
+    \item Agregadores de preços e promoções
+    \item Clima
+    \item Informações de usuários
+\end{itemize}
+
+Por outro lado, temos também que são indiretos, demandam inferências e grandes quantidades de dados, mas podem ser extremamente uteis para usuários. Como exemplo, podemos citar:
+
+\begin{itemize}
+  \item Tempo de Permanência
+  \item Número de Pessoas em um local
+\end{itemize}
+
+Os dois dados acima podem ser utilizados, por exemplo, para determinar se um supermercado está cheio ou não. Deixando a cargo do usuário escolher um horário melhor para ir ao supermercado ou poder escolher outro local mais vazio.
+
+Os dados citados são resultados de uma rápida análise. Outros dados interessantes podem surgir ao longo do desenvolvimento, tais informações serão levadas em consideração de acordo com o grau de importância.
+
+\subsection{Relação com POC I }
+
+Conceitos do sistema desenvolvido para o projeto do semestre passado serão utilizado para dar suporte a aplicação proposta. Neste caso, redes de curta distância podem ser utilizadas para prover uma resposta mais precisa.
+
+
+\section{ Metodologia }
+
+O desenvolvimento será dividido em duas grandes etapas. A primeira será o desenvolvimento do sistema que irá comunicar com o aplicativo. Ele será responsável por coletar dados de cada local e funcionará como um agregador de serviços. Nele, os usuários vão poder enviar informações relevantes para outros usuários, bem como atualizar as informações dos locais. A segunda etapa é o desenvolvimento do aplicativo em si. Este aplicativo, inicialmente, será somente para Android. A arquitetura do projeto segue o seguinte padrão:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\textwidth]{arquitetura.jpg}
+\caption{Arquitetura do Projeto}
+\label{fig:exampleFig1}
+\end{figure}
+
+Nesta arquitetura, o servidor fica responsável por ter o banco de dados. Este banco irá conter informações dos usuários, supermercados e produtos. Outra responsabilidade do servidor é buscar informações de diversos serviços para manter a base de dados atualizada. Outro grande fator que colabora para que tudo esteja sempre correto é a colobaração dos usuários. Será possível por meio do aplicativo, atualizar informações de produtos para que outros usuários tenham uma experiência melhor.
+
+
+Para cada etapa, será reservado um período de 5 semanas. Iniciados do mês de setembro, e o controle de tarefas será realizado por meio da aplicação trello (www.trello.com). Por se tratar de um protótipo, o resultado não será tão refinado quanto se deseja, mas funcional para os objetivos do projeto.
+
+\section{ Resultados Esperados }
+
+No fim do projeto, espera-se ter um protótipo de um aplicativo, capaz de integrar alguns serviços e seja voltado para facilitar a vida de um cliente desavisado em um supermercado. Espera-se que este aplicativo funcione como uma lista de compras e ele seja capaz de indicar o preço, promoções, posição, disponibilidade, e qualidade de um produto. Outra funcionalidade importante é identificar e indicar produtos com relações a eventos, como churrascos ou festas.
+
+
+
+
+
+\nocite{*}
+
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+
+\end{document}
