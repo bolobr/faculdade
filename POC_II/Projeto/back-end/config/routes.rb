@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
+
+
+  #Mobile Routes Interface
+    #Post
+    post 'mobile_interface/new_user' => "mobile_interface#new_user", as: "mobile_new_user"
+    post 'mobile_interface/get_session' => "mobile_interface#new_session", as: "mobile_session"
+    post 'mobile_interface/get_infos' => "mobile_interface#get_places_list", as: "mobile_place_list"
+    post 'mobile_interface/update_place' => "mobile_interface#update_place_info", as: "update_place"
+    post 'mobile_interface/new_place' => "mobile_interface#new_place", as: "new_place"
+    post 'mobile_interface/update_product_info' => "mobile_interface#update_product_info", as: "update_product"
+    post 'mobile_interface/add_product' => "mobile_interface#add_product", as: "add_product"
+
+    #Get
+    get 'mobile_interface/get_place' => "mobile_interface#get_place_info", as: "mobile_place_info"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

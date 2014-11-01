@@ -1,4 +1,4 @@
-class Products
+class Product
   include Mongoid::Document
   field :name, type: String
   field :category, type: String
@@ -6,9 +6,9 @@ class Products
 
 
   #Price
-  field :price_min, type: float
-  field :price_max, type: float
-  field :price_indicated, type: float
+  field :price_min, type: Float
+  field :price_max, type: Float
+  field :price_indicated, type: Float
 
   #Position
   field :position, type: String
@@ -23,4 +23,5 @@ class Products
   }
 
   embedded_in :markets
+
 end
